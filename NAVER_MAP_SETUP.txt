@@ -1,0 +1,15 @@
+[금성돈가스 - 네이버 지도 연결]
+
+현재 주소/네이버 지도 링크/지도 위치 좌표까지는 사이트에 반영되어 있습니다.
+인터랙티브 네이버 지도만 Client ID(ncpKeyId)가 필요합니다.
+
+1. NAVER Cloud Platform 콘솔에 로그인
+2. Service > Application Services > Maps > Application에서 애플리케이션 생성
+3. Dynamic Map을 선택
+4. 웹 서비스 URL(실제 홈페이지 도메인)을 등록
+5. 발급된 Client ID를 map-config.js의 ncpKeyId에 입력
+
+중요:
+- Client Secret은 웹사이트 파일에 넣지 마세요.
+- 프런트엔드 지도 로더에는 Client ID(ncpKeyId)만 사용합니다.
+- 로컬 file://로 열 때보다 실제 호스팅 도메인에서 테스트하는 것이 안전합니다.

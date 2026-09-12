@@ -1167,3 +1167,37 @@ body {
     letter-spacing: -0.045em;
   }
 }
+
+
+/* =========================================================
+   FINAL: PC / mobile section-title font unified
+   가게 이야기 · 메뉴 · 매장 안내 · 오시는 길
+   ========================================================= */
+:root {
+  --section-title-font: "Nanum Myeongjo", serif;
+}
+
+.section-heading h2,
+#about .section-heading h2,
+#menu .section-heading h2,
+#store .section-heading h2,
+#location .section-heading h2 {
+  font-family: var(--section-title-font) !important;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  letter-spacing: -0.055em !important;
+  word-break: keep-all;
+}
+
+@media (max-width: 760px) {
+  .section-heading h2,
+  #about .section-heading h2,
+  #menu .section-heading h2,
+  #store .section-heading h2,
+  #location .section-heading h2 {
+    font-family: var(--section-title-font) !important;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    letter-spacing: -0.055em !important;
+  }
+}

@@ -1048,3 +1048,122 @@ body {
     font-size: .94rem;
   }
 }
+
+
+/* =========================================================
+   Desktop menu typography hierarchy — final override
+   메뉴명이 먼저 보이고 가격은 보조 정보로 보이도록 명확히 분리
+   ========================================================= */
+@media (min-width: 761px) {
+  .menu-item-button .menu-name {
+    color: var(--deep-brown);
+    font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.5;
+  }
+
+  .menu-item-button .menu-price {
+    color: rgba(78, 51, 41, 0.64);
+    font-family: Georgia, "Times New Roman", "Noto Sans KR", serif;
+    font-size: 0.86rem;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+    line-height: 1.35;
+  }
+
+  .menu-item-button::after {
+    color: rgba(78, 51, 41, 0.78);
+    font-weight: 500;
+  }
+}
+
+/* 모바일에서도 같은 위계는 유지하되 크기만 모바일에 맞춤 */
+@media (max-width: 760px) {
+  .menu-item-button .menu-name {
+    color: var(--deep-brown);
+    font-weight: 700;
+  }
+
+  .menu-item-button .menu-price {
+    color: rgba(78, 51, 41, 0.66);
+    font-family: Georgia, "Times New Roman", "Noto Sans KR", serif;
+    font-weight: 400;
+  }
+}
+
+
+/* =========================================================
+   Mobile interaction-state fixes
+   - iOS/Safari의 sticky hover/focus 때문에 닫은 뒤에도 눌린 모양이
+     남는 현상을 방지
+   - 메뉴명 들여쓰기는 실제 펼침 상태(aria-expanded)와만 연결
+   ========================================================= */
+@media (max-width: 760px) {
+  /* 햄버거: 닫힌 상태는 항상 원래 모양으로 복귀 */
+  .menu-toggle,
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    color: var(--brown);
+    background: rgba(247, 241, 234, 0.78);
+    border-color: rgba(78, 51, 41, 0.16);
+    transform: none;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 2px solid rgba(78, 51, 41, 0.28);
+    outline-offset: 2px;
+  }
+
+  .menu-toggle:active {
+    color: var(--deep-brown);
+    background: rgba(183, 167, 154, 0.18);
+    border-color: rgba(78, 51, 41, 0.28);
+    transform: scale(.96);
+  }
+
+  /* 메뉴 사진: 텍스트 이동은 '열려 있을 때'만 유지 */
+  .menu-item-button,
+  .menu-item-button:hover,
+  .menu-item-button:focus {
+    padding-left: 0;
+  }
+
+  .menu-item-button[aria-expanded="true"] {
+    padding-left: .35rem;
+  }
+
+  .menu-item-button:focus-visible {
+    outline: 2px solid var(--taupe);
+    outline-offset: 3px;
+  }
+}
+
+/* 실제 마우스가 있는 PC에서만 hover 들여쓰기 사용 */
+@media (min-width: 761px) and (hover: hover) and (pointer: fine) {
+  .menu-item-button:hover {
+    padding-left: .35rem;
+  }
+}
+
+
+/* =========================================================
+   Section title font consistency — PC / Mobile
+   가게 이야기 · 메뉴 · 매장 안내 · 오시는 길
+   기기별 한글 fallback 차이를 없애기 위해 동일 웹폰트 고정
+   ========================================================= */
+.section-heading h2 {
+  font-family: "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+/* 모바일에서도 폰트 자체는 절대 바꾸지 않고 크기만 조정 */
+@media (max-width: 760px) {
+  .section-heading h2 {
+    font-family: "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
+    font-weight: 700;
+    letter-spacing: -0.045em;
+  }
+}

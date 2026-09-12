@@ -5,12 +5,15 @@ if (toggle && nav) {
   toggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
+    // 모바일 Safari에서 tap 후 focus/hover 스타일이 남는 것을 방지
+    requestAnimationFrame(() => toggle.blur());
   });
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      toggle.blur();
     });
   });
 }
@@ -38,5 +41,8 @@ menuButtons.forEach((button) => {
       button.setAttribute('aria-expanded', 'true');
       panel.classList.add('is-open');
     }
+
+    // 터치 기기에서 닫은 뒤 focus 스타일이 남지 않도록 정리
+    requestAnimationFrame(() => button.blur());
   });
 });

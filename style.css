@@ -1327,3 +1327,37 @@ body {
     max-width: 188px;
   }
 }
+
+
+/* =========================================================
+   NAVER map layer containment
+   지도 내부 확대/축소 컨트롤이 모바일 헤더/내비게이션 위로
+   튀어나오지 않도록 지도 자체를 독립 stacking context로 제한.
+   ========================================================= */
+.map-shell {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.naver-map {
+  position: relative;
+  z-index: 0;
+}
+
+/* 고정 헤더와 펼쳐지는 모바일 내비게이션은 항상 지도보다 위 */
+.site-header {
+  z-index: 1000;
+}
+
+@media (max-width: 760px) {
+  .site-header .nav {
+    z-index: 1001;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 1002;
+  }
+}

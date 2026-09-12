@@ -1269,3 +1269,46 @@ body {
     max-width: calc(var(--max-width) + 48px);
   }
 }
+
+
+/* =========================================================
+   FIX v7 — Mobile hamburger pressed/open state
+   열린 동안만 눌린 느낌 유지, 닫히면 즉시 원상복귀
+   ========================================================= */
+@media (max-width: 760px) {
+  /* 기본(닫힘) 상태 */
+  .menu-toggle[aria-expanded="false"] {
+    color: var(--brown);
+    background: rgba(247, 241, 234, 0.78);
+    border-color: rgba(78, 51, 41, 0.16);
+    box-shadow: none;
+    transform: translateY(0) scale(1);
+  }
+
+  /* 메뉴가 실제로 열려 있을 때만 눌린 상태 유지 */
+  .menu-toggle[aria-expanded="true"] {
+    color: var(--deep-brown);
+    background: rgba(183, 167, 154, 0.24);
+    border-color: rgba(78, 51, 41, 0.34);
+    box-shadow:
+      inset 0 2px 4px rgba(42, 26, 20, 0.16),
+      0 1px 0 rgba(255, 255, 255, 0.45);
+    transform: translateY(1px) scale(.97);
+  }
+
+  /* 손가락을 누르는 순간에는 한 단계 더 눌리는 촉감 */
+  .menu-toggle:active {
+    transform: translateY(2px) scale(.94);
+  }
+
+  /* iOS Safari의 sticky hover/focus가 열린/닫힌 상태를 덮어쓰지 않도록 함 */
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    outline: none;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 2px solid rgba(78, 51, 41, 0.28);
+    outline-offset: 2px;
+  }
+}

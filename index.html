@@ -58,6 +58,7 @@
         <p class="eyebrow">MENU</p>
         <h2>메뉴</h2>
         <p>대표 메뉴와 가격입니다.</p>
+        <p class="menu-photo-hint">메뉴를 누르면 음식 사진을 확인할 수 있습니다.</p>
       </div>
 
       <div class="menu-groups">
@@ -69,28 +70,28 @@
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-sirloin">
-              <span>등심돈가스</span><strong>11,000원</strong>
+              <span class="menu-name">등심돈가스</span><strong class="menu-price">11,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-sirloin"><div class="menu-photo-inner"><img src="assets/menu/sirloin.jpg" alt="등심돈가스 사진" /></div></div>
           </div>
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-spicy">
-              <span>매운돈가스</span><strong>13,000원</strong>
+              <span class="menu-name">매운돈가스</span><strong class="menu-price">13,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-spicy"><div class="menu-photo-inner"><img src="assets/menu/spicy.jpg" alt="매운돈가스 사진" /></div></div>
           </div>
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-cheese">
-              <span>치즈돈가스</span><strong>14,000원</strong>
+              <span class="menu-name">치즈돈가스</span><strong class="menu-price">14,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-cheese"><div class="menu-photo-inner"><img src="assets/menu/cheese.jpg" alt="치즈돈가스 사진" /></div></div>
           </div>
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-garlic">
-              <span>매운땡초마늘돈가스</span><strong>14,000원</strong>
+              <span class="menu-name">매운땡초마늘돈가스</span><strong class="menu-price">14,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-garlic"><div class="menu-photo-inner"><img src="assets/menu/garlic.jpg" alt="매운땡초마늘돈가스 사진" /></div></div>
           </div>
@@ -101,21 +102,21 @@
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-udon">
-              <span>야채튀김우동</span><strong>6,000원</strong>
+              <span class="menu-name">야채튀김우동</span><strong class="menu-price">6,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-udon"><div class="menu-photo-inner"><img src="assets/menu/udon.jpg" alt="야채튀김우동 사진" /></div></div>
           </div>
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-tteok">
-              <span>기름떡볶이 (쌀떡)</span><strong>4,500원</strong>
+              <span class="menu-name">기름떡볶이 (쌀떡)</span><strong class="menu-price">4,500원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-tteok"><div class="menu-photo-inner"><img src="assets/menu/tteok.png" alt="기름떡볶이 사진" /></div></div>
           </div>
 
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-sauce">
-              <span>매운 소스 추가</span><strong>1,000원</strong>
+              <span class="menu-name">매운 소스 추가</span><strong class="menu-price">1,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-sauce"><div class="menu-photo-inner"><img src="assets/menu/sauce.jpg" alt="매운 소스 사진" /></div></div>
           </div>
@@ -125,7 +126,7 @@
           <h3>음료</h3>
           <div class="menu-entry">
             <button class="menu-item menu-item-button" type="button" aria-expanded="false" aria-controls="photo-drink">
-              <span>음료수</span><strong>2,000원</strong>
+              <span class="menu-name">음료수</span><strong class="menu-price">2,000원</strong>
             </button>
             <div class="menu-photo-panel" id="photo-drink"><div class="menu-photo-inner"><img src="assets/menu/drink.jpg" alt="음료수 사진" /></div></div>
           </div>
@@ -176,11 +177,11 @@
           </div>
           <div>
             <span>전화</span>
-            <strong>미정</strong>
+            <strong><a class="phone-number" href="tel:0547750678">054-775-0678</a></strong>
           </div>
           <div class="button-row">
             <a class="button secondary" href="https://map.naver.com/p/entry/place/1640694145?c=15.72,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202609120127%26locale%3Dko%26svcName%3Dmap_pcv5" target="_blank" rel="noopener noreferrer">네이버 지도에서 보기</a>
-            <span class="button secondary is-disabled" aria-disabled="true">전화번호 준비 중</span>
+            <a class="button secondary" href="tel:0547750678">전화하기</a>
           </div>
         </div>
       </div>

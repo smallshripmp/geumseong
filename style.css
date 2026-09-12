@@ -226,10 +226,25 @@ a { color: inherit; text-decoration: none; }
     place-items: center;
     width: 42px;
     height: 42px;
-    border: 0;
-    background: transparent;
+    border: 1px solid rgba(78, 51, 41, 0.16);
+    border-radius: 12px;
+    background: rgba(247, 241, 234, 0.78);
+    color: var(--brown);
     font-size: 1.45rem;
+    line-height: 1;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color .2s ease, background .2s ease, border-color .2s ease, transform .15s ease;
+  }
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    color: var(--deep-brown);
+    background: rgba(183, 167, 154, 0.18);
+    border-color: rgba(78, 51, 41, 0.28);
+    outline: none;
+  }
+  .menu-toggle:active {
+    transform: scale(.96);
   }
   .nav {
     position: absolute;
@@ -903,5 +918,133 @@ body {
 
   .section {
     padding-inline: 16px;
+  }
+}
+
+
+/* =========================================================
+   Menu row alignment + hierarchy + photo hint + phone polish
+   ========================================================= */
+.menu-photo-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin: .35rem 0 0;
+  padding: .42rem .72rem;
+  border: 1px solid rgba(78, 51, 41, .14);
+  border-radius: 999px;
+  background: rgba(183, 167, 154, .10);
+  color: var(--muted-brown) !important;
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.menu-photo-hint::before {
+  content: "＋";
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.menu-item-button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(92px, auto) 24px;
+  align-items: center;
+  column-gap: 14px;
+  padding: 1rem 0;
+}
+
+.menu-item-button::after {
+  position: static;
+  grid-column: 3;
+  justify-self: end;
+  transform: none;
+  line-height: 1;
+}
+
+.menu-item-button[aria-expanded="true"]::after {
+  transform: rotate(45deg);
+}
+
+.menu-item-button .menu-name {
+  grid-column: 1;
+  min-width: 0;
+  color: var(--deep-brown);
+  font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+  font-size: 1.03rem;
+  font-weight: 720;
+  line-height: 1.55;
+  letter-spacing: -.025em;
+  text-align: left;
+}
+
+.menu-item-button .menu-price {
+  grid-column: 2;
+  justify-self: end;
+  margin-right: 0;
+  color: rgba(78, 51, 41, .78);
+  font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+  font-size: .93rem;
+  font-weight: 560;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.menu-item-button:hover .menu-name,
+.menu-item-button:focus-visible .menu-name {
+  color: var(--ink);
+}
+
+.phone-number {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .menu-photo-hint {
+    margin-top: .2rem;
+    padding: .38rem .62rem;
+    font-size: .76rem;
+  }
+
+  .menu-item-button {
+    grid-template-columns: minmax(0, 1fr) 82px 22px;
+    column-gap: 9px;
+    min-height: 62px;
+    padding: 14px 0;
+  }
+
+  .menu-item-button .menu-name {
+    font-size: .99rem;
+    font-weight: 720;
+    line-height: 1.5;
+  }
+
+  .menu-item-button .menu-price {
+    width: 82px;
+    font-size: .88rem;
+    font-weight: 560;
+    line-height: 1.35;
+  }
+
+  .menu-item-button::after {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .menu-item-button {
+    grid-template-columns: minmax(0, 1fr) 76px 20px;
+    column-gap: 7px;
+  }
+
+  .menu-item-button .menu-price {
+    width: 76px;
+    font-size: .84rem;
+  }
+
+  .menu-item-button .menu-name {
+    font-size: .94rem;
   }
 }

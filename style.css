@@ -1312,3 +1312,18 @@ body {
     outline-offset: 2px;
   }
 }
+
+
+/* --- Full sign wordmark in header (금성돈가스 + seal) --- */
+.logo img {
+  height: 36px;
+  width: auto;
+  max-width: 255px;
+}
+
+@media (max-width: 760px) {
+  .logo img {
+    height: 30px;
+    max-width: 188px;
+  }
+}

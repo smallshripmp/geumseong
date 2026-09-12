@@ -1149,55 +1149,28 @@ body {
 
 
 /* =========================================================
-   Section title font consistency — PC / Mobile
-   가게 이야기 · 메뉴 · 매장 안내 · 오시는 길
-   기기별 한글 fallback 차이를 없애기 위해 동일 웹폰트 고정
+   Section title correction v3
+   1) PC: 기존 글씨체 그대로 유지
+   2) PC: '가게 이야기'만 생기던 추가 들여쓰기 보정
+   3) Mobile: PC의 한글 serif 느낌과 최대한 비슷한 iOS 서체 사용
    ========================================================= */
-.section-heading h2 {
-  font-family: "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
-  font-weight: 700;
-  letter-spacing: -0.045em;
-}
 
-/* 모바일에서도 폰트 자체는 절대 바꾸지 않고 크기만 조정 */
-@media (max-width: 760px) {
-  .section-heading h2 {
-    font-family: "Noto Serif KR", "AppleMyungjo", "Nanum Myeongjo", "Batang", serif;
-    font-weight: 700;
-    letter-spacing: -0.045em;
+/* PC: 기존 .section-heading h2의 Georgia/Times/serif 설정을 건드리지 않음.
+   #about 섹션만 24px 안쪽으로 들어가 보이던 구조를 왼쪽으로 보정. */
+@media (min-width: 761px) {
+  #about.section {
+    max-width: calc(var(--max-width) + 48px);
   }
 }
 
-
-/* =========================================================
-   FINAL: PC / mobile section-title font unified
-   가게 이야기 · 메뉴 · 매장 안내 · 오시는 길
-   ========================================================= */
-:root {
-  --section-title-font: "Nanum Myeongjo", serif;
-}
-
-.section-heading h2,
-#about .section-heading h2,
-#menu .section-heading h2,
-#store .section-heading h2,
-#location .section-heading h2 {
-  font-family: var(--section-title-font) !important;
-  font-weight: 800 !important;
-  font-style: normal !important;
-  letter-spacing: -0.055em !important;
-  word-break: keep-all;
-}
-
+/* Mobile: PC 글꼴을 바꾸지 않고, iPhone에서 가장 비슷한 명조 계열만 지정 */
 @media (max-width: 760px) {
-  .section-heading h2,
   #about .section-heading h2,
   #menu .section-heading h2,
   #store .section-heading h2,
   #location .section-heading h2 {
-    font-family: var(--section-title-font) !important;
-    font-weight: 800 !important;
-    font-style: normal !important;
-    letter-spacing: -0.055em !important;
+    font-family: "AppleMyungjo", "Times New Roman", "Batang", serif;
+    font-weight: 700;
+    letter-spacing: -0.045em;
   }
 }

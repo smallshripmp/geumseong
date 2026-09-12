@@ -1256,3 +1256,16 @@ body {
     font-size: .86rem;
   }
 }
+
+
+/* =========================================================
+   FIX v6 — desktop section heading horizontal alignment
+   가게 이야기 / 메뉴 / 매장 안내 / 오시는 길의 왼쪽 시작선 통일
+   ========================================================= */
+@media (min-width: 761px) {
+  #about.section,
+  #store.section,
+  #location.section {
+    max-width: calc(var(--max-width) + 48px);
+  }
+}

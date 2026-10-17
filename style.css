@@ -1453,4 +1453,14 @@ body {
     position: relative;
     z-index: 1002;
   }
+  /* =========================================================
+   space - 매장안내 사진탭 디자인
+   ========================================================= */
+  .store-photo-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
 }

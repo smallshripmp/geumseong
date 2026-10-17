@@ -1453,14 +1453,32 @@ body {
     position: relative;
     z-index: 1002;
   }
-  /* =========================================================
-   space - 매장안내 사진탭 디자인
+}
+
+/* =========================================================
+   SPACE - 매장안내 사진
    ========================================================= */
-  .store-photo-item {
+.store-photo-item {
   width: 100%;
   height: 100%;
+  min-width: 0;
   object-fit: cover;
   border-radius: 24px;
   display: block;
 }
+
+/* 첫 번째 큰 사진칸을 차지하도록 */
+.photo-grid > .store-photo-item:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 760px) {
+  .store-photo-item {
+    height: 230px;
+    border-radius: 18px;
+  }
+
+  .photo-grid > .store-photo-item:first-child {
+    grid-row: auto;
+  }
 }
